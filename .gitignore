@@ -1,0 +1,18 @@
+# Ignore Visual Studio files
+.vs/
+bin/
+obj/
+
+# Node modules
+node_modules/
+build/
+dist/
+
+# Environment and user files
+*.user
+*.db
+.env
+
+# OS-specific
+Thumbs.db
+.DS_Store
