@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import API from "../api";
 import { Container, Typography, Box, Chip, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Dialog, DialogTitle, DialogContent, DialogActions, Tooltip, TextField, Select, MenuItem, FormControl, InputLabel, IconButton, RadioGroup, FormControlLabel, Radio, TablePagination, Snackbar, Alert, CircularProgress } from "@mui/material";
 import { Add, Visibility, Edit } from "@mui/icons-material";
+import AdminDashboard from "./AdminDashboard";
 
 export default function Dashboard() {
   const user = JSON.parse(localStorage.getItem("user") || "null");
@@ -224,6 +225,12 @@ export default function Dashboard() {
         />
       </TableContainer>
         </>
+      )}
+
+      {user?.role === 'admin' && (
+        <Box sx={{ mt: 4 }}>
+          <AdminDashboard />
+        </Box>
       )}
 
       <Dialog open={viewDialog.open} onClose={() => setViewDialog({ open: false, request: null })} maxWidth="sm" fullWidth>
